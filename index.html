@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Minimal Mapbox</title>
+
+  <!-- Mapbox CSS -->
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />
+
+  <style>
+    body { margin: 0; }
+    #map { width: 100vw; height: 100vh; }
+  </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<!-- Mapbox JS -->
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+
+<script>
+  // Paste your Mapbox API token here
+  mapboxgl.accessToken = "pk.eyJ1IjoicnhqZGVlcCIsImEiOiJjbW1vaHUyM2gwZHZ0MnFxNG9yZTBpc2gzIn0.QzQCFC_CA8W5NKHMw-YOxg";
+
+  const map = new mapboxgl.Map({
+    container: "map",
+    style: "mapbox://styles/mapbox/streets-v11",
+
+    // Melbourne default coords
+    center: [144.9631, -37.8136],
+    zoom: 10
+  });
+
+  // Optional: add navigation controls (zoom buttons)
+  map.addControl(new mapboxgl.NavigationControl());
+</script>
+
+</body>
+</html>
